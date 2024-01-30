@@ -17,4 +17,12 @@ public class MemberServiceV1 {
     private void validation(Member toMember) {
         if (toMember.getMemberId().equals("ex")) {
             throw new IllegalStateException("이체중 예외 발생"); }
-    } }
+    }
+}
+
+/**
+ * 특정 기술에 종속적이지 않고 순수한 비지니스 로직만 존재한다.
+ * 특정 기술과 관련된 코드가 없기 때문에 코드가 깔끔하고 유지보수가 쉽다.
+ *
+ * SQLException라는 JDBC 기술에 의존
+ */
