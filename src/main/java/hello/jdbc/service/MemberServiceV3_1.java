@@ -22,8 +22,7 @@ public class MemberServiceV3_1 {
 
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
         //트랜잭션 시작
-        TransactionStatus status = transactionManager.getTransaction(new
-                DefaultTransactionDefinition());
+        TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
         try {
             //비즈니스 로직
             bizLogic(fromId, toId, money); transactionManager.commit(status);//성공시 커밋
@@ -46,4 +45,7 @@ public class MemberServiceV3_1 {
 /**
  * 트랜잭션 추상화로 인해 JDBC에 의존하지 않는다.
  * JPA로 바꾼다고 하더라고 서비스 코드는 그대로 유지할 수 있다.
+ *
+ * 트랜잭선을 시작하는 과정은 try catch finally 코드가 반복된다. (비지니스 로직 이외 코드는 반복)
+ * 탬플릿 콜백 패턴을 활용하면 해결
  */

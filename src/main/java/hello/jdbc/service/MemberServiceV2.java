@@ -41,7 +41,6 @@ public class MemberServiceV2 {
     private void validation(Member toMember) {
         if (toMember.getMemberId().equals("ex")) {
             throw new IllegalStateException("이체중 예외 발생"); }
-
     }
 
     private void businessLogic(Connection con, String fromId, String toId, int money) throws SQLException {
