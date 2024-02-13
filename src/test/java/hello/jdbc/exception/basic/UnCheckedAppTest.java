@@ -20,7 +20,7 @@ public class UnCheckedAppTest {
         try {
             controller.request();
         } catch (Exception e) {
-            //로그로 출력할 때 마지막 파라미터에 예외를 넣어주면 로그에 스택 트레이스를 출력할 수 있다.
+            // 로그로 출력할 때 마지막 파라미터에 예외를 넣어주면 로그에 스택 트레이스를 출력할 수 있다.
             log.info("ex", e);
         }
     }
